@@ -1,16 +1,34 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
+import Tasks from "./components/Tasks";
 import "./App.css";
 
 const App = () => {
     // const message = 'Hello, world!'
-    const [message, setMessage] = useState("hello world");
+    // const [message, setMessage] = useState("hello world");
+    const [tasks, setTasks] = useState([
+      {
+        id: '1',
+        title: 'Estudar Programação',
+        completed: false,
+      },
+      {
+        id: '2',
+        title: 'Ler Livros',
+        completed: true,
+      },
+      {
+        id: '2',
+        title: 'Ler Livros',
+        completed: true,
+      }
+    ]);
+
     return (
       <>
-        <div className="container">{message}</div>
-        <button onClick={() => setMessage("hellooooo")}>
-          mudar mensagem
-        </button>   
+        <div className="container">
+          <Tasks tasks={tasks}/>
+        </div>  
       </>
       
     )
